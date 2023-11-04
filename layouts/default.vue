@@ -9,7 +9,7 @@
       </v-container>
     </v-main>
     <v-footer>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ $dayjs().year() }}</span>
     </v-footer>
   </v-app>
 </template>
