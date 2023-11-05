@@ -1,11 +1,14 @@
+import dayjs from 'dayjs';
 import { v4 as uuid } from 'uuid'
 export default class Counter {
-    #id = null;
+    #id = '';
+    #createdAt = '';
     #name = '';
     #weight = 0;
     #value = 0;
     constructor({ name, weight }) {
         this.#id = uuid(name.concat(weight))
+        this.#createdAt = dayjs().toISOString()
         this.#name = name
         this.#weight = weight
     }
@@ -24,6 +27,9 @@ export default class Counter {
     }
     get totalWeight() {
         return this.#weight * this.#value
+    }
+    get createdAt() {
+        return this.#createdAt
     }
     // Setters
     set name(newValue) {
