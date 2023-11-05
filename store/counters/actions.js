@@ -16,5 +16,13 @@ export default {
     // Payload must be a object with groupId and counterId props
     removeCounter({ commit }, payload) {
         commit('REMOVE_COUNTER', payload)
+    },
+    // Payload must be a object with groupId and counterId props
+    incrementCounter({ commit }, payload) {
+        commit('INCREMENT_COUNTER', payload)
+    },
+    // Payload must be a object with groupId and counterId props
+    decrementCounter({ commit }, payload) {
+        commit('DECREMENT_COUNTER', payload)
     }
 }
