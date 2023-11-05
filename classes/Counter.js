@@ -22,9 +22,6 @@ export default class Counter {
     get weight() {
         return this.#weight
     }
-    get value() {
-        return this.value
-    }
     get totalWeight() {
         return this.#weight * this.value
     }
