@@ -6,8 +6,8 @@ export default class Counter {
     #createdAt = null;
     #name = '';
     counters = {}
-    constructor({ name, weight }) {
-        this.#id = uuid(name.concat(weight))
+    constructor({ name }) {
+        this.#id = uuid(name)
         this.#createdAt = dayjs().toISOString()
         this.#name = name
     }
