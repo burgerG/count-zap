@@ -5,7 +5,7 @@ export default class Counter {
     #createdAt = '';
     #name = '';
     #weight = 0;
-    #value = 0;
+    value = 0;
     constructor({ name, weight }) {
         this.#id = uuid(name.concat(weight))
         this.#createdAt = dayjs().toISOString()
@@ -22,11 +22,8 @@ export default class Counter {
     get weight() {
         return this.#weight
     }
-    get value() {
-        return this.#value
-    }
     get totalWeight() {
-        return this.#weight * this.#value
+        return this.#weight * this.value
     }
     get createdAt() {
         return this.#createdAt
@@ -34,12 +31,5 @@ export default class Counter {
     // Setters
     set name(newValue) {
         this.#name = newValue
-    }
-    // Methods
-    increment() {
-        this.#value++
-    }
-    decrement() {
-        this.#value--
     }
 }

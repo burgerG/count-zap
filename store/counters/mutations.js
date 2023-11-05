@@ -15,5 +15,13 @@ export default {
     // Payload is destructured, groupId must be a Group Id and counterId a Counter Id
     REMOVE_COUNTER(state, { groupId, counterId }) {
         Vue.delete(state.groups[groupId].counters, counterId)
-    }
+    },
+    // Payload is destructured, groupId must be a Group Id and counterId a Counter Id
+    INCREMENT_COUNTER(state, { groupId, counterId }) {
+        Vue.set(state.groups[groupId].counters[counterId], 'value', state.groups[groupId].counters[counterId].value + 1)
+    },
+    // Payload is destructured, groupId must be a Group Id and counterId a Counter Id
+    DECREMENT_COUNTER(state, { groupId, counterId }) {
+        Vue.set(state.groups[groupId].counters[counterId], 'value', state.groups[groupId].counters[counterId].value - 1)
+    },
 }
