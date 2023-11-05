@@ -84,7 +84,7 @@
         <v-card-title>
           {{ group.name }}
         </v-card-title>
-        <v-card-section>
+        <v-card-text>
           <v-card v-for="counter in group.counters" :key="counter.id" outlined>
             <v-card-title>
               {{ counter.name }}
@@ -93,7 +93,7 @@
               {{ counter.weight }}
             </v-card-subtitle>
           </v-card>
-        </v-card-section>
+        </v-card-text>
       </v-card>
     </v-row>
   </div>
