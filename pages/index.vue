@@ -92,6 +92,32 @@
             <v-card-subtitle>
               {{ counter.weight }}
             </v-card-subtitle>
+            <v-card-text>
+              <span> {{ counter.value }} </span>
+              <span> {{ counter.totalWeight }}</span>
+            </v-card-text>
+            <v-card-actions class="justify-end">
+              <v-btn
+                @click="
+                  $store.dispatch('counters/incrementCounter', {
+                    groupId: group.id,
+                    counterId: counter.id,
+                  })
+                "
+              >
+                +1
+              </v-btn>
+              <v-btn
+                @click="
+                  $store.dispatch('counters/decrementCounter', {
+                    groupId: group.id,
+                    counterId: counter.id,
+                  })
+                "
+              >
+                -1
+              </v-btn>
+            </v-card-actions>
           </v-card>
         </v-card-text>
       </v-card>
