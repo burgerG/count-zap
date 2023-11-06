@@ -19,7 +19,6 @@ export default ({ store }) => {
             const restoredData = JSON.parse(localStorage.getItem(key))
             if (restoredData) {
                 const payload = {}
-                console.warn(restoredData);
                 Object.keys(restoredData.groups).forEach(key => {
                     payload[key] = new Group(restoredData.groups[key])
                 })
