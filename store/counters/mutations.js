@@ -1,5 +1,9 @@
 import Vue from "vue"
 export default {
+    // The payload must be the groups prop of the store
+    SET_GROUPS(state, payload) {
+        state.groups = payload
+    },
     // Payload must be an instance of the Group class
     ADD_GROUP(state, payload) {
         Vue.set(state.groups, payload.id, payload)

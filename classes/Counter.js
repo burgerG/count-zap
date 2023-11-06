@@ -6,14 +6,11 @@ export default class Counter {
     name = '';
     weight = 0;
     value = 0;
-    constructor({ id = undefined, createdAt = undefined, name, weight, }) {
+    constructor({ id = undefined, createdAt = undefined, value = undefined, name, weight, }) {
         this.id = id ?? uuid(name.concat(weight));
         this.createdAt = createdAt ?? dayjs().toISOString();
         this.name = name;
         this.weight = weight;
-    }
-    // Getters
-    get totalWeight() {
-        return this.weight * this.value
+        this.value = value ?? 0
     }
 }
