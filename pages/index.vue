@@ -94,7 +94,7 @@
             </v-card-subtitle>
             <v-card-text>
               <span> {{ counter.value }} </span>
-              <span> {{ counter.totalWeight }}</span>
+              <span> {{ getCounterTotalWeight(group.id, counter.id) }}</span>
             </v-card-text>
             <v-card-actions class="justify-end">
               <v-btn
@@ -147,6 +147,14 @@ export default {
         text: this.groups[key].name,
         value: key,
       }));
+    },
+  },
+  methods: {
+    getCounterTotalWeight(groupId, counterId) {
+      return this.$store.getters["counters/getCounterTotalWeight"](
+        groupId,
+        counterId
+      );
     },
   },
 };
