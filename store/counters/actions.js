@@ -1,6 +1,10 @@
 import Counter from '~/classes/Counter'
 import Group from '~/classes/Group'
 export default {
+    // The payload must be the groups prop of the store
+    setGroups({ commit }, payload) {
+        commit('SET_GROUPS', payload)
+    },
     // Payload must be a object with prop name, {name: String}
     addGroup({ commit }, payload) {
         commit('ADD_GROUP', new Group(payload))
